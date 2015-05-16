@@ -1,1 +1,15 @@
 {% extends "main.html" %}
+{% block body_content %}
+    <div class="container">
+        <div class="row" id="search_bar">
+            <div class="col-lg-offset-2 col-lg-8">
+                <form class="form-inline">
+                    <div class="form-group col-lg-12">
+                        <input type="text" placeholder="Search Keyword" class="col-lg-8" id="search-box">
+                        <input class="btn btn-default" type="search" value="Search" id="search-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
