@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html {% block html_itemscope %}{% endblock %}>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%  block html_header_ref %}
+        <link href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+    {%  endblock %}
+    <title>{% block title %}Lolious{% endblock %}</title>
+    {% block head_custom %}
+    {% endblock %}
+</head>
+<body>
+{% block navbar %}
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}"><img class="logo" src="{% static "images/lolious-logo.png" %}"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li id="nav-button-home"><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="#about">Top</a></li>
+                    <li><a href="#contact">Hot</a></li>
+
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block body_content %}
+{% endblock %}
+{% block footer %}
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">Lolious.com - All rights reserved</p>
+        </div>
+    </div>
+{% endblock %}
+{% block body_end_js %}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+{%  endblock %}
+{% block end_body_custom_js %}
+{% endblock %}
+</body>
+</html>
